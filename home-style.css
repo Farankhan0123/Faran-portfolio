@@ -1,0 +1,263 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+    background: url('https://static.vecteezy.com/system/resources/previews/005/592/482/non_2x/abstract-dark-purple-background-overlap-layer-on-dark-space-for-background-design-exclusive-wallpaper-design-for-poster-brochure-presentation-website-etc-vector.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    /* Modern professional font */
+    color: #f4f4f4;
+}
+
+/* Professional Navbar */
+nav {
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparent glass look */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* Space between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    /* Larger professional size */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    /* Gold hover effect */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+
+/* Hero Section */
+.hero {
+    font-size: 10px;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    /* Dark overlay for readability */
+}
+
+.hero h1 span {
+    color: #ff3366;
+}
+
+
+
+.typing-text {
+    /* 1.2rem se shuru ho kar 5rem tak jayega */
+    font-size: clamp(1.2rem, 5vw, 5rem);
+    font-weight: 800;
+    color: #fff;
+    border-right: 5px solid #ffcc00;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(30, end) infinite, blink 0.7s step-end infinite;
+    padding-right: 10px;
+}
+
+/* Jab screen 720px ya us se choti ho */
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 7.6vw !important;
+        /* Thora aur chota kar dein */
+    }
+}
+
+/* Keyframes ko media query se bahar rakhen */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    40%,
+    80% {
+        width: 70%;
+    }
+
+    /* PC ke liye width */
+    100% {
+        width: 0;
+    }
+}
+
+/* Agar mobile par animation width change karni hai to ye tariqa best hai */
+@media (max-width: 768px) {
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+
+        40%,
+        80% {
+            width: 100%;
+        }
+
+        /* Mobile ke liye 100% width */
+        100% {
+            width: 0;
+        }
+    }
+}
+
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #ff0000;
+    }
+}
+
+/* Main Content Container */
+.container {
+    max-width: 1370px;
+    margin: 10px auto 50px auto;
+    /* Pulls container slightly up over hero */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Semi-transparent white for content */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Boxes */
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+/* Alternate layout for boxes (Image Left, Text Right) */
+.box.reverse {
+    flex-direction: row-reverse;
+}
+
+.box-img {
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+    background-color: #ff0000;
+    /* Placeholder color */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+
+.box-img img {
+
+    max-height: 134%;
+    /* Box ki height ka 80% rahegi */
+    object-fit: contain;
+    /* Image ki ratio kharab nahi hogi */
+    border-radius: 5px;
+    /* Agar image ko bhi round corners dene hon */
+}
+
+
+.box-text {
+    flex: 1;
+}
+
+.box-text h3 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.box-text p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Responsive Design (Mobile) */
+
+
+@media (max-width: 600px) {
+    nav ul {
+        gap: 15px;
+        /* Mobile par gap kam karein */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        /* Mobile par size chota karein */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 2rem;
+    }
+
+    .box,
+    .box.reverse {
+        flex-direction: column;
+        /* Stack items vertically on small screens */
+        text-align: center;
+    }
+
+    .box-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile screen ke liye settings */
+@media (max-width: 768px) {
+    .box-img {
+        height: 200px;
+        /* Mobile par box ki height kam kar di */
+        margin: 10px;
+        /* Screen ke kinaron se thori jagah chhorne ke liye */
+    }
+
+    .box-img img {
+        max-width: 117%;
+        /* Image box ki width ka 90% rahegi */
+        max-height:150%;
+        /* Image box ki height ka 90% rahegi */
+        object-fit: contain;
+        /* Image puri ki puri dikhayi degi, kate gi nahi */
+    }
+}

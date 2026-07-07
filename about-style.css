@@ -1,0 +1,207 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            /* Transparent glass look */
+            backdrop-filter: blur(10px);
+            /* Blur effect */
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            /* Space between links */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 2rem;
+            /* Larger professional size */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            /* Gold hover effect */
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            /* Jab screen choti ho to items neeche aa jayein */
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5%;
+            gap: 20px;
+            background: #000;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 6rem);
+            /* Text screen ke hisab se chota hoga */
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero img {
+            height: auto;
+            /* Fixed height hata di */
+            width: 100%;
+            max-width: 750px;
+            /* Mobile par image choti rahegi */
+            margin: 0 auto;
+        }
+
+        .hero h1 span {
+            color: #ff3366;
+        }
+
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            /* Jab screen choti ho to text niche aa jaye */
+            align-items: center;
+            /* Image aur text ko center mein align karne ke liye */
+            gap: 40px;
+            /* Image aur text ke darmiyan gap */
+            padding: 80px 10%;
+        }
+
+        /* Image ka size */
+        .about img {
+            width: 100%;
+            max-width: 350px;
+            /* Image ka size thora adjust kiya */
+            height: auto;
+            border-radius: 30px;
+            object-fit: cover;
+        }
+
+        /* About Text ko image ke samne lane ke liye */
+        .about-text {
+            flex: 1;
+            /* Yeh property text ko bachi hui jagah lene par majboor karti hai */
+            min-width: 300px;
+            /* Mobile par text box chota na ho */
+        }
+
+        /* Heading aur Paragraph ke liye styling */
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff3366;
+        }
+
+        .about-text p {
+            line-height: 1.5;
+            font-size: 2rem;
+        }
+
+
+        /* Section 3: Reviews (Vertical Boxes) */
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            /* max-width ko hata den ya barha den, jese 100% ya 900px */
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            /* padding ko barha dein taake card bara aur open-open lagay */
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 10px solid #ff0055;
+            /* border ko thora mota kar diya hai */
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateX(10px);
+            /* Smooth hover effect */
+        }
+
+        .review-title {
+            color: #ff0055;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .review-text {
+            color: #333;
+            line-height: 1.6;
+            font-size: 20px;
+            font-style: bold;
+        }
+
+        .review {
+            text-align: center;
+            font-size: 30px;
+            color: #ff3366;
+            margin: 50px;
+        }
+
+
+
+
+
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 15px;
+                /* Mobile par gap kam karein */
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+                /* Mobile par size chota karein */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                /* Mobile par Image upar aur Heading neeche dikhegi */
+                text-align: center;
+                padding-top: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                /* Mobile par image upar, text niche */
+                text-align: center;
+            }
+        }
